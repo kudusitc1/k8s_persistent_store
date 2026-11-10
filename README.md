@@ -35,7 +35,7 @@ kubectl get po -w
 ```
 ### window 2
 ```bash
-POD_NAME=kubectl get pods -l app=pyapp -o jsonpath='{.items[0].metadata.name}'
+POD_NAME=$(kubectl get pods -l app=pyapp -o jsonpath='{.items[0].metadata.name}')
 kubectl delete $POD_NAME
 ```
 
