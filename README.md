@@ -1,6 +1,6 @@
 ## STORAGE CLASS
 
-### create sclass-ns namespace
+### 1. create sclass-ns namespace
 ```bash
 kubectl create ns sclass-ns
 kubectl get ns
