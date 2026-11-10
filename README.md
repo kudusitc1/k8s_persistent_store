@@ -48,3 +48,13 @@ kubectl delete pv nfs-shared
 kubectl config set-context --current --namespace=default
 kubectl delete ns pyapp-ns
 ```
+
+## STORAGE CLASS
+
+### create sclass-ns namespace
+```bash
+kubectl create ns sclass-ns
+kubectl get ns
+kubectl config set-context --current --namespace=sclass-ns
+kubectl config get-contexts
+```

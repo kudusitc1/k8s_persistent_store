@@ -4,7 +4,7 @@ metadata:
   labels:
     app: pyapp
   name: pyapp
-  namespace: pyapp-ns
+  namespace: sclass-ns
 spec:
   replicas: 2
   selector:
@@ -41,7 +41,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pyapp-svc
-  namespace: pyapp-ns
+  namespace: sclass-ns
 spec:
   type: NodePort
   selector:
