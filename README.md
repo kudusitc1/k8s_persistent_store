@@ -38,3 +38,13 @@ kubectl get po -w
 POD_NAME=kubectl get pods -l app=pyapp -o jsonpath='{.items[0].metadata.name}'
 kubectl delete $POD_NAME
 ```
+
+## CLEAN UP
+
+```bash
+kubectl delete deploy pyapp
+kubectl delete pvc nfs-shared-claim
+kubectl delete pv nfs-shared
+kubectl config set-context --current --namespace=default
+kubectl delete ns pyapp-ns
+```
