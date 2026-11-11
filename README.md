@@ -49,6 +49,7 @@ kubectl get po -w
 ```bash
 POD_NAME=$(kubectl get pods -l app=pyapp -o jsonpath='{.items[0].metadata.name}')
 kubectl delete $POD_NAME
+```
 
 ## CLEAN UP
 ```bash
