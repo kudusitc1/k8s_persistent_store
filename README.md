@@ -21,3 +21,27 @@ helm pull csi-driver-nfs/csi-driver-nfs --untar
 helm install csi-driver-nfs -f sc-values.yml csi-driver-nfs/ --namespace kube-system 
 ```
 
+### 3. create pvc
+```bash
+kubectl apply -f pvc.yaml
+```
+
+### 4.check that a pvc & pv have been created
+```bash
+kubectl get pvc,pv
+```
+
+### 5. deploy pods & svc
+```bash
+kubectl apply -f deploy.yaml
+```
+
+## CLEAN UP
+```bash
+kubectl delete -f deploy.yaml
+kubectl delete -f pvc.yaml
+helm uninstall csi-driver-nfs -n kube-system
+kubectl config set-context --current --namespace=default
+kubectl delete ns sclass-ns
+kubectl get ns
+```
