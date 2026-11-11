@@ -26,7 +26,7 @@ helm install csi-driver-nfs -f sc-values.yml csi-driver-nfs/ --namespace kube-sy
 kubectl apply -f pvc.yaml
 ```
 
-### 4.check that a pvc & pv have been created
+### 4. check that a pvc & pv have been created
 ```bash
 kubectl get pvc,pv
 ```
