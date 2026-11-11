@@ -4,9 +4,9 @@ metadata:
   name: nfs-shared-claim
   namespace: sclass-ns
 spec:
-  storageClassName: standard
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
+  storageClassName: nfs-csi
