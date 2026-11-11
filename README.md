@@ -36,6 +36,20 @@ kubectl get pvc,pv
 kubectl apply -f deploy.yaml
 ```
 
+## 6. to access the app via wsl-minikube
+```bash
+minikube service pyapp-svc -n sclass-ns -p kubesphere
+```
+## 7. to delete pods - create 2 windows
+### window 1
+```bash
+kubectl get po -w
+```
+### window 2
+```bash
+POD_NAME=$(kubectl get pods -l app=pyapp -o jsonpath='{.items[0].metadata.name}')
+kubectl delete $POD_NAME
+
 ## CLEAN UP
 ```bash
 kubectl delete -f deploy.yaml
