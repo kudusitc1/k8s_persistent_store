@@ -42,9 +42,9 @@ kubectl delete $POD_NAME
 ## CLEAN UP
 
 ```bash
-kubectl delete deploy pyapp
-kubectl delete pvc nfs-shared-claim
-kubectl delete pv nfs-shared
+kubectl delete -f deploy.yaml
+kubectl delete -f pvc.yaml
+kubectl delete -f pv.yaml
 kubectl config set-context --current --namespace=default
 kubectl delete ns pyapp-ns
 ```
