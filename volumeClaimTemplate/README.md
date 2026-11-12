@@ -1,9 +1,9 @@
 ### VOLUME CLAIM TEMPLATE
 
-### 1. Create vtc-ns namespace
+### 1. Create vct-ns namespace
 ```bash
-kubectl create ns vts-ns
-kubectl config set-context --current --namespace=vts-ns
+kubectl create ns vct-ns
+kubectl config set-context --current --namespace=vct-ns
 kubectl config get-contexts
 ```
 
@@ -42,6 +42,6 @@ kubectl exec mongodb-0 -- cat /data/db/persist.txt
 kubectl delete -f sts.yaml
 kubectl delete -f headless.yaml
 kubectl config set-context --current --namespace=default
-kubectl delete ns vts-ns
+kubectl delete ns vct-ns
 ```
 
