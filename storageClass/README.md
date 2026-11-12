@@ -11,7 +11,7 @@ helm repo update
 helm pull csi-driver-nfs/csi-driver-nfs --untar
 
 # Install the chart into kube-system
-helm install csi-driver-nfs -f sc-values.yml csi-driver-nfs/ --namespace kube-system 
+helm install csi-driver-nfs -f sc-values.yaml csi-driver-nfs/ --namespace kube-system 
 ```
 
 ### 1. Create sclass-ns namespace
@@ -49,7 +49,7 @@ kubectl get po -w
 #### window 2
 ```bash
 POD_NAME=$(kubectl get pods -l app=pyapp -o jsonpath='{.items[0].metadata.name}')
-kubectl delete $POD_NAME
+kubectl delete po $POD_NAME
 ```
 
 ### CLEAN UP

@@ -22,6 +22,11 @@ for i in 0 1; do echo "=== mongodb-$i ==="; kubectl exec "mongodb-$i" -- df -h /
 # Write data
 kubectl exec mongodb-0 -- sh -c 'echo "I survived pod deletion!" > /data/db/persist.txt'
 ```
+#### window 1
+```bash
+kubectl get po -w
+```
+#### window 2
 ```bash
 # Delete the pod (StatefulSet will recreate it)
 kubectl delete pod mongodb-0
